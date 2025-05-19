@@ -47,5 +47,12 @@ public class Component {
     }
 
     public Component() {
+    }   
+
+    @Override
+    public String toString() {
+        return name;
     }
+    
+    
 }

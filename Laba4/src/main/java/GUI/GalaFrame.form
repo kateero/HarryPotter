@@ -75,7 +75,6 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="buyersMouseClicked"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buyersActionPerformed"/>
           </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="storageComponents">
@@ -98,7 +97,6 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="storageComponentsMouseClicked"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="storageComponentsActionPerformed"/>
           </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="delivery">

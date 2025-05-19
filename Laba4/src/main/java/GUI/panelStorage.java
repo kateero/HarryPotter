@@ -22,6 +22,7 @@ public class panelStorage extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tableStorage = new javax.swing.JTable();
 
+        tableStorage.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tableStorage.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -33,6 +34,7 @@ public class panelStorage extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tableStorage.setEnabled(false);
         jScrollPane1.setViewportView(tableStorage);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

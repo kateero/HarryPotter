@@ -1,5 +1,19 @@
 package GUI;
 
+import Entities.Component;
+import Entities.Wand;
+import Manager.EntityManagerHelper;
+import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComponent;
+import javax.swing.JFormattedTextField;
+import javax.swing.JOptionPane;
+import javax.swing.JSpinner;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.SwingWorker;
+
 public class panelCreate extends javax.swing.JPanel {
 
     public panelCreate() {
@@ -10,10 +24,10 @@ public class panelCreate extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        spinnerLength = new javax.swing.JSpinner();
-        spinnerPrice = new javax.swing.JSpinner();
+        comboBoxCore = new javax.swing.JComboBox<>();
+        comboBoxWood = new javax.swing.JComboBox<>();
+        spinnerLength = new javax.swing.JSpinner(new SpinnerNumberModel(26, 20, 35, 1));
+        spinnerPrice = new javax.swing.JSpinner(new SpinnerNumberModel(100, 50, 300, 10));
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -21,22 +35,20 @@ public class panelCreate extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
-        jComboBox1.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "сердечная жила дракона", "волос единорога", "перо феникса"}));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
+        comboBoxCore.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
+        comboBoxCore.setName(""); // NOI18N
 
-        jComboBox2.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"акация", "ольха", "яблоня", "ясень", "осина", "бук", "терн", "черный орех", "кедр", "вишня", "каштан", "кипарис", "кизил", "черное дерево", "бузина", "вяз", "дуб черешчатый", "пихта", "боярышник", "лещина", "падуб", "граб", "лиственница", "лавр", "клен", "груша", "сосна", "тополь", "красный дуб", "красное дерево", "рябина", "серебристая липа", "ель", "платан", "виноградная лоза", "грецкий орех", "ива", "тис"  }));
+        comboBoxWood.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
 
         spinnerLength.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        spinnerLength.setValue(26);
+        JComponent editorLength = spinnerLength.getEditor();
+        JFormattedTextField tfLength = ((JSpinner.DefaultEditor)editorLength).getTextField();
+        tfLength.setEditable(false);
 
         spinnerPrice.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        spinnerPrice.setValue(100);
+        JComponent editorPrice = spinnerPrice.getEditor();
+        JFormattedTextField tfPrice = ((JSpinner.DefaultEditor)editorPrice).getTextField();
+        tfPrice.setEditable(false);
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
         jLabel1.setText("Сердцевина");
@@ -73,9 +85,9 @@ public class panelCreate extends javax.swing.JPanel {
                 .addGap(189, 189, 189))
             .addGroup(layout.createSequentialGroup()
                 .addGap(97, 97, 97)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(comboBoxCore, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(comboBoxWood, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(98, 98, 98))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -108,8 +120,8 @@ public class panelCreate extends javax.swing.JPanel {
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboBoxCore, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboBoxWood, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -122,19 +134,88 @@ public class panelCreate extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        createWand();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    public void updateComboBox(boolean flag) {
+        new SwingWorker<List<Component>, Void>() {
+            @Override
+            protected List<Component> doInBackground() throws Exception {
+                EntityManager em = EntityManagerHelper.getEntityManager();
+                try {
+                    if (flag) {
+                        return em.createQuery("SELECT c FROM Component c WHERE c.quantity > 0 AND c.type = 'сердцевина'", Component.class)
+                                .getResultList();
+                    } else {
+                        return em.createQuery("SELECT c FROM Component c WHERE c.quantity > 0 AND c.type = 'древесина'", Component.class)
+                                .getResultList();
+                    }
+                } finally {
+                    em.close();
+                }
+            }
+
+            @Override
+            protected void done() {
+                try {
+                    List<Component> components = get();
+                    DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>();
+                    for (Component component : components) {
+                        model.addElement(component.getName());
+                    }
+                    if (flag) {
+                        comboBoxCore.setModel(model);
+                    } else {
+                        comboBoxWood.setModel(model);
+                    }
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null,
+                            "Пополните склад",
+                            "Предупреждение", JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
+        }.execute();
+    }
+
+    private void createWand() {
+        EntityManager em = EntityManagerHelper.getEntityManager();
+        EntityTransaction tx = em.getTransaction();
+
+        try {
+            tx.begin();
+
+            Component core = em.find(Component.class, comboBoxCore.getSelectedItem());
+            core.setQuantity(core.getQuantity() - 1);
+
+            Component wood = em.find(Component.class, comboBoxWood.getSelectedItem());
+            wood.setQuantity(wood.getQuantity() - 1);
+
+            Wand newWand = new Wand();
+            newWand.setCore(core);
+            newWand.setWood(wood);
+            newWand.setIsSold(false);
+            newWand.setLength((Integer)spinnerLength.getValue());
+            newWand.setPrice((Integer)spinnerPrice.getValue());
+
+            em.persist(newWand);
+            tx.commit();
+
+        } catch (Exception e) {
+            if (tx.isActive()) {
+                tx.rollback();
+            }
+            throw e;
+        } finally {
+            em.close();
+        }
+
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> comboBoxCore;
+    private javax.swing.JComboBox<String> comboBoxWood;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

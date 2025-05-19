@@ -79,11 +79,6 @@ public class GalaFrame extends javax.swing.JFrame {
                 buyersMouseClicked(evt);
             }
         });
-        buyers.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buyersActionPerformed(evt);
-            }
-        });
         menuBar.add(buyers);
 
         storageComponents.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
@@ -96,11 +91,6 @@ public class GalaFrame extends javax.swing.JFrame {
         storageComponents.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 storageComponentsMouseClicked(evt);
-            }
-        });
-        storageComponents.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                storageComponentsActionPerformed(evt);
             }
         });
         menuBar.add(storageComponents);
@@ -157,14 +147,6 @@ public class GalaFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void storageComponentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_storageComponentsActionPerformed
-
-    }//GEN-LAST:event_storageComponentsActionPerformed
-
-    private void buyersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyersActionPerformed
-
-    }//GEN-LAST:event_buyersActionPerformed
-
     private void buyersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buyersMouseClicked
         panelWizard.refreshData();
         jTabbedPane1.setSelectedIndex(2);
@@ -174,10 +156,13 @@ public class GalaFrame extends javax.swing.JFrame {
 
     private void wandsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wandsMouseClicked
         jTabbedPane1.setSelectedIndex(0);
+        panelWand.refreshData();
     }//GEN-LAST:event_wandsMouseClicked
 
     private void createWandMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createWandMouseClicked
         jTabbedPane1.setSelectedIndex(1);
+        panelCreate.updateComboBox(true);
+        panelCreate.updateComboBox(false);
     }//GEN-LAST:event_createWandMouseClicked
 
     private void storageComponentsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_storageComponentsMouseClicked

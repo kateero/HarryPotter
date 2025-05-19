@@ -32,6 +32,7 @@ public class panelWand extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tabelWands.setEnabled(false);
         jScrollPane1.setViewportView(tabelWands);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
