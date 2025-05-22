@@ -12,7 +12,7 @@ public class GalaFrame extends javax.swing.JFrame {
     public GalaFrame() {
         initComponents();
         panelWizard.refreshData();
-        panelWand.refreshData();
+        panelWand.refreshAvailable();
         panelStorage.refreshData();
        // panelDelivery.refreshData();
     }
@@ -156,7 +156,7 @@ public class GalaFrame extends javax.swing.JFrame {
 
     private void wandsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wandsMouseClicked
         jTabbedPane1.setSelectedIndex(0);
-        panelWand.refreshData();
+        panelWand.refreshAvailable();
     }//GEN-LAST:event_wandsMouseClicked
 
     private void createWandMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createWandMouseClicked

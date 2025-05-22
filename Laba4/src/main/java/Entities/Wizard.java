@@ -16,6 +16,10 @@ public class Wizard {
 
     @Column(name = "first_name", length = 30)
     private String firstName;
+    
+    @OneToOne
+    @JoinColumn(name = "id_wand", referencedColumnName = "id", unique = true)
+    private Wand wand; 
 
     public Integer getId() {
         return id;
@@ -27,6 +31,10 @@ public class Wizard {
 
     public String getFirstName() {
         return firstName;
+    }
+
+    public Wand getWand() {
+        return wand;
     }
 
     public void setId(Integer id) {
@@ -41,11 +49,16 @@ public class Wizard {
         this.firstName = firstName;
     }
 
+    public void setWand(Wand wand) {
+        this.wand = wand;
+    }
+
     public Wizard() {
     }
 
-    public Wizard(String lastName, String firstName) {
+    public Wizard(String lastName, String firstName, Wand wand) {
         this.lastName = lastName;
         this.firstName = firstName;
+        this.wand = wand;
     }
 }

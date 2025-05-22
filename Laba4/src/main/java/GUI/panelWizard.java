@@ -72,13 +72,14 @@ public class panelWizard extends javax.swing.JPanel {
                 try {
                     List<Wizard> wizards = get();
                     DefaultTableModel model = new DefaultTableModel(
-                            new Object[]{"ID", "Фамилия", "Имя"}, 0);
+                            new Object[]{"ID", "Фамилия", "Имя", "ID палочки"}, 0);
 
                     for (Wizard w : wizards) {
                         model.addRow(new Object[]{
                             w.getId(),
                             w.getFirstName(),
-                            w.getLastName()
+                            w.getLastName(),
+                            w.getWand()
                         });
                     }
 

@@ -86,4 +86,11 @@ public class Wand {
 
     public Wand() {
     }
+
+    @Override
+    public String toString() {
+        return String.valueOf(id);
+    }
+    
+    
 }
