@@ -86,7 +86,7 @@ public class panelStorage extends javax.swing.JPanel {
         protected List<Component> doInBackground() {
             EntityManager em = EntityManagerHelper.getEntityManager();
             try {
-                return em.createQuery("SELECT c FROM Component c", Component.class)
+                return em.createQuery("SELECT c FROM Component c ORDER BY c.name", Component.class)
                         .getResultList();
             } finally {
                 em.close();

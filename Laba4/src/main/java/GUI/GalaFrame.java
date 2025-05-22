@@ -27,8 +27,8 @@ public class GalaFrame extends javax.swing.JFrame {
         createWand = new javax.swing.JMenu();
         buyers = new javax.swing.JMenu();
         storageComponents = new javax.swing.JMenu();
-        delivery = new javax.swing.JMenu();
         deliveryDetails = new javax.swing.JMenu();
+        delivery = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,20 +95,6 @@ public class GalaFrame extends javax.swing.JFrame {
         });
         menuBar.add(storageComponents);
 
-        delivery.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        delivery.setText(" Заказать компоненты");
-        delivery.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
-        delivery.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        delivery.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        delivery.setMinimumSize(new java.awt.Dimension(150, 15));
-        delivery.setPreferredSize(new java.awt.Dimension(150, 15));
-        delivery.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                deliveryMouseClicked(evt);
-            }
-        });
-        menuBar.add(delivery);
-
         deliveryDetails.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         deliveryDetails.setText("     Журнал поставок");
         deliveryDetails.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
@@ -121,6 +107,20 @@ public class GalaFrame extends javax.swing.JFrame {
             }
         });
         menuBar.add(deliveryDetails);
+
+        delivery.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        delivery.setText("     Сбросить данные");
+        delivery.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        delivery.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        delivery.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        delivery.setMinimumSize(new java.awt.Dimension(150, 15));
+        delivery.setPreferredSize(new java.awt.Dimension(150, 15));
+        delivery.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deliveryMouseClicked(evt);
+            }
+        });
+        menuBar.add(delivery);
 
         setJMenuBar(menuBar);
 
@@ -171,10 +171,12 @@ public class GalaFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_storageComponentsMouseClicked
 
     private void deliveryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deliveryMouseClicked
+        
         jTabbedPane1.setSelectedIndex(4);
     }//GEN-LAST:event_deliveryMouseClicked
 
     private void deliveryDetailsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deliveryDetailsMouseClicked
+        panelDeliveryDetails.refreshData();
         jTabbedPane1.setSelectedIndex(5);
     }//GEN-LAST:event_deliveryDetailsMouseClicked
 
