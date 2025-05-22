@@ -1,5 +1,6 @@
 package mephi.b22901.kateero.laba4;
 
+
 import GUI.GalaFrame;
 
 public class Laba4 {
