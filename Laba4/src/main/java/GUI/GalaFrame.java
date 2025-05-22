@@ -109,7 +109,7 @@ public class GalaFrame extends javax.swing.JFrame {
         menuBar.add(deliveryDetails);
 
         delivery.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        delivery.setText("     Сбросить данные");
+        delivery.setText("      Сбросить данные");
         delivery.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         delivery.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         delivery.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
