@@ -135,7 +135,14 @@ public class panelCreate extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        createWand();
+        if(comboBoxCore.getSelectedItem() != null && comboBoxWood.getSelectedItem() != null){
+            createWand();
+        } else {
+             JOptionPane.showMessageDialog(null,
+                            "Выберите компоненты",
+                            "Предупреждение", JOptionPane.INFORMATION_MESSAGE);
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public void updateComboBox(boolean flag) {
@@ -200,6 +207,10 @@ public class panelCreate extends javax.swing.JPanel {
 
             em.persist(newWand);
             tx.commit();
+            
+            JOptionPane.showMessageDialog(null,
+                            "Палочка создана",
+                            "Успешно", JOptionPane.INFORMATION_MESSAGE);
 
         } catch (Exception e) {
             if (tx.isActive()) {

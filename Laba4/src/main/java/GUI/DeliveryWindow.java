@@ -4,6 +4,7 @@ import Entities.Component;
 import Entities.Delivery;
 import Entities.DeliveryDetails;
 import Manager.EntityManagerHelper;
+import java.time.LocalDate;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -11,6 +12,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.SpinnerNumberModel;
 import javax.swing.SwingWorker;
 import javax.swing.table.DefaultTableModel;
 
@@ -38,7 +40,7 @@ public class DeliveryWindow extends javax.swing.JFrame {
         detailsModel = new DefaultTableModel(
             new Object[]{"Компонент", "Количество", "Цена за единицу", "Итого"}, 0);
         tableAddedComponents = new javax.swing.JTable();
-        quantitySpinner = new javax.swing.JSpinner();
+        quantitySpinner = new javax.swing.JSpinner(new SpinnerNumberModel(5, 1, 100, 1));
         addComponent = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -187,6 +189,7 @@ public class DeliveryWindow extends javax.swing.JFrame {
 
                     Delivery delivery = new Delivery();
                     int totalCost = calculateTotalCost(tableAddedComponents);
+                    delivery.setDeliveryDate(LocalDate.now());
                     delivery.setCost(totalCost);
 
                     em.persist(delivery);

@@ -9,14 +9,12 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingWorker;
 
 public class buyerWindow extends javax.swing.JFrame {
-    
+
     Integer wandId = 0;
 
     public Integer getWandId() {
         return wandId;
     }
-
-    
 
     public buyerWindow(Integer wandID) {
         this.wandId = wandID;
@@ -113,8 +111,14 @@ public class buyerWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonSellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSellActionPerformed
-        this.createWizard();
-        this.dispose();
+        if (firstNameValue.getText().trim().isEmpty() && lastNameValue.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null,
+                    "Заполните поля покупателя",
+                    "Ошибка", JOptionPane.ERROR_MESSAGE);
+        } else {
+            this.createWizard();
+            this.dispose();
+        }
     }//GEN-LAST:event_buttonSellActionPerformed
 
     private void firstNameValueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameValueActionPerformed
@@ -122,64 +126,58 @@ public class buyerWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_firstNameValueActionPerformed
 
     private void createWizard() {
-        if (getWandId() == null) {
-         JOptionPane.showMessageDialog(null,
-                            "Палочка не выбрана",
-                            "Ошибка", JOptionPane.ERROR_MESSAGE);
-        return;
-    }
-        
+
         new SwingWorker<Void, Void>() {
-        @Override
-        protected Void doInBackground() throws Exception {
-            EntityManager em = EntityManagerHelper.getEntityManager();
-            EntityTransaction tx = null;
-            
-            try {
-                tx = em.getTransaction();
-                tx.begin();
+            @Override
+            protected Void doInBackground() throws Exception {
+                EntityManager em = EntityManagerHelper.getEntityManager();
+                EntityTransaction tx = null;
 
-                Wand wand = em.find(Wand.class, getWandId());
-                if (wand == null) {
-                    throw new IllegalArgumentException("Палочка не найдена");
-                }
+                try {
+                    tx = em.getTransaction();
+                    tx.begin();
 
-                Wizard wizard = new Wizard();
-                wizard.setFirstName(firstNameValue.getText());
-                wizard.setLastName(lastNameValue.getText());
-                wizard.setWand(wand);
-                
-                wand.setIsSold(true);
-                
-                em.persist(wizard);
-                em.merge(wand);
-                
-                tx.commit();
-                
-                return null;
-                
-            } catch (Exception e) {
-                if (tx != null && tx.isActive()) {
-                    tx.rollback();
+                    Wand wand = em.find(Wand.class, getWandId());
+                    if (wand == null) {
+                        throw new IllegalArgumentException("Палочка не найдена");
+                    }
+
+                    Wizard wizard = new Wizard();
+                    wizard.setFirstName(firstNameValue.getText());
+                    wizard.setLastName(lastNameValue.getText());
+                    wizard.setWand(wand);
+
+                    wand.setIsSold(true);
+
+                    em.persist(wizard);
+                    em.merge(wand);
+
+                    tx.commit();
+
+                    return null;
+
+                } catch (Exception e) {
+                    if (tx != null && tx.isActive()) {
+                        tx.rollback();
+                    }
+                    throw e;
+                } finally {
+                    em.close();
                 }
-                throw e;
-            } finally {
-                em.close();
             }
-        }
 
-        @Override
-        protected void done() {
-            try {
-                get(); 
-            } catch (Exception e) {
-                 JOptionPane.showMessageDialog(null,
+            @Override
+            protected void done() {
+                try {
+                    get();
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null,
                             "Волшебник не добавлен",
                             "Ошибка", JOptionPane.ERROR_MESSAGE);
+                }
             }
-        }
-    }.execute();
-}
+        }.execute();
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

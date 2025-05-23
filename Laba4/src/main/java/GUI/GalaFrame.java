@@ -6,7 +6,7 @@ public class GalaFrame extends javax.swing.JFrame {
     panelWand panelWand = new panelWand();
     panelCreate panelCreate = new panelCreate();
     panelStorage panelStorage = new panelStorage();
-    panelDelivery panelDelivery = new panelDelivery();
+    panelReset panelDelivery = new panelReset();
     panelDeliveryDetails panelDeliveryDetails = new panelDeliveryDetails();
 
     public GalaFrame() {

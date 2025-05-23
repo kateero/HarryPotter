@@ -117,6 +117,9 @@
           </SubComponents>
         </Container>
         <Component class="javax.swing.JSpinner" name="quantitySpinner">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JSpinner(new SpinnerNumberModel(5, 1, 100, 1))"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="addComponent">
           <Properties>

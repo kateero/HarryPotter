@@ -70,11 +70,12 @@ public class panelDeliveryDetails extends javax.swing.JPanel {
                 try {
                     List<Delivery> deliveries = get();
                     DefaultTableModel model = new DefaultTableModel(
-                            new Object[]{"ID поставки", "Сумма поставки"}, 0);
+                            new Object[]{"ID поставки", "Дата поставки", "Сумма поставки"}, 0);
 
                     for (Delivery delivery : deliveries) {
                         model.addRow(new Object[]{
                             delivery.getId(),
+                            delivery.getDeliveryDate(),
                             delivery.getCost()
                         });
                     }

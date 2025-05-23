@@ -1,6 +1,6 @@
 package Entities;
 
-import java.security.Timestamp;
+import java.time.LocalDate;
 import javax.persistence.*;
 
 @Entity
@@ -12,6 +12,9 @@ public class Delivery {
     @Column(name = "id")
     private Integer id;
 
+    @Column(name = "delivery_date", nullable = false)
+    private LocalDate deliveryDate;
+
     @Column(name = "cost")
     private Integer cost;
 
@@ -19,12 +22,19 @@ public class Delivery {
         return id;
     }
 
+    public LocalDate getDeliveryDate() {
+        return deliveryDate;
+    }
     public Integer getCost() {
         return cost;
     }
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public void setDeliveryDate(LocalDate deliveryDate) {
+        this.deliveryDate = deliveryDate;
     }
 
     public void setCost(Integer cost) {
