@@ -2,6 +2,7 @@ package GUI;
 
 import Entities.Wand;
 import Manager.EntityManagerHelper;
+import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
@@ -10,6 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.SwingWorker;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 
 public class panelWand extends javax.swing.JPanel {
     boolean state = true;
@@ -28,9 +30,19 @@ public class panelWand extends javax.swing.JPanel {
         soldButton = new javax.swing.JButton();
         statusLabel = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(222, 186, 191));
+
+        tabelWands.setBackground(new java.awt.Color(243, 229, 200));
+        tabelWands.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        tabelWands.setFillsViewportHeight(true);
+        JTableHeader header = tabelWands.getTableHeader();
+        header.setFont(new Font("Georgia", 0, 16));
+        header.setBackground(new java.awt.Color(255, 250, 241));
+        tabelWands.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         tabelWands.setModel(new javax.swing.table.DefaultTableModel(
 
         ));
+        tabelWands.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         tabelWands.setEnabled(false);
         jScrollPane1.setViewportView(tabelWands);
         tabelWands.addMouseListener(new MouseAdapter(){
@@ -50,6 +62,9 @@ public class panelWand extends javax.swing.JPanel {
             }
         });
 
+        availableButton.setBackground(new java.awt.Color(145, 44, 160));
+        availableButton.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        availableButton.setForeground(new java.awt.Color(243, 229, 200));
         availableButton.setText("В наличии");
         availableButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -57,6 +72,9 @@ public class panelWand extends javax.swing.JPanel {
             }
         });
 
+        soldButton.setBackground(new java.awt.Color(145, 44, 160));
+        soldButton.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        soldButton.setForeground(new java.awt.Color(243, 229, 200));
         soldButton.setText("Продано");
         soldButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,41 +82,42 @@ public class panelWand extends javax.swing.JPanel {
             }
         });
 
-        statusLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        statusLabel.setText("jLabel1");
+        statusLabel.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
+        statusLabel.setForeground(new java.awt.Color(74, 48, 50));
+        statusLabel.setText("Палочки в наличии");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(availableButton, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(163, 163, 163)
-                .addComponent(soldButton, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(181, 181, 181))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 864, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(335, 335, 335)
+                        .addComponent(statusLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(319, 319, 319)
-                        .addComponent(statusLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(17, Short.MAX_VALUE))
+                        .addGap(38, 38, 38)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(40, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(availableButton, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(167, 167, 167)
+                .addComponent(soldButton, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(180, 180, 180))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(statusLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(12, 12, 12)
+                .addComponent(statusLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(soldButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(availableButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18))
+                .addGap(31, 31, 31))
         );
     }// </editor-fold>//GEN-END:initComponents
 

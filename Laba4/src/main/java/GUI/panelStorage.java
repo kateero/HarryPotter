@@ -9,6 +9,8 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.SwingWorker;
 import javax.swing.table.DefaultTableModel;
+import java.awt.Font;
+import javax.swing.table.JTableHeader;
 
 
 public class panelStorage extends javax.swing.JPanel {
@@ -25,7 +27,15 @@ public class panelStorage extends javax.swing.JPanel {
         tableStorage = new javax.swing.JTable();
         jButton3 = new javax.swing.JButton();
 
-        tableStorage.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        setBackground(new java.awt.Color(222, 186, 191));
+
+        tableStorage.setBackground(new java.awt.Color(243, 229, 200));
+        tableStorage.setFillsViewportHeight(true);
+        JTableHeader header = tableStorage.getTableHeader();
+        header.setFont(new Font("Georgia", 0, 16));
+        header.setBackground(new java.awt.Color(255, 250, 241));
+        tableStorage.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        tableStorage.setForeground(new java.awt.Color(74, 48, 50));
         tableStorage.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -40,6 +50,9 @@ public class panelStorage extends javax.swing.JPanel {
         tableStorage.setEnabled(false);
         jScrollPane1.setViewportView(tableStorage);
 
+        jButton3.setBackground(new java.awt.Color(145, 44, 160));
+        jButton3.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(243, 229, 200));
         jButton3.setText("Заказать компоненты");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,21 +67,21 @@ public class panelStorage extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(367, 367, 367)
-                        .addComponent(jButton3))
+                        .addGap(38, 38, 38)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 824, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 848, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(27, Short.MAX_VALUE))
+                        .addGap(336, 336, 336)
+                        .addComponent(jButton3)))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

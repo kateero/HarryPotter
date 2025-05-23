@@ -35,14 +35,18 @@ public class panelCreate extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(222, 186, 191));
+
+        comboBoxCore.setBackground(new java.awt.Color(255, 250, 241));
         comboBoxCore.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         comboBoxCore.setName(""); // NOI18N
 
+        comboBoxWood.setBackground(new java.awt.Color(255, 250, 241));
         comboBoxWood.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
 
         spinnerLength.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        JComponent editorLength = spinnerLength.getEditor();
-        JFormattedTextField tfLength = ((JSpinner.DefaultEditor)editorLength).getTextField();
+        JComponent editor = spinnerLength.getEditor();
+        JFormattedTextField tfLength = ((JSpinner.DefaultEditor)editor).getTextField();
         tfLength.setEditable(false);
 
         spinnerPrice.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
@@ -51,21 +55,28 @@ public class panelCreate extends javax.swing.JPanel {
         tfPrice.setEditable(false);
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(74, 48, 50));
         jLabel1.setText("Сердцевина");
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(74, 48, 50));
         jLabel2.setText("Древесина");
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(74, 48, 50));
         jLabel3.setText("Длина");
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(74, 48, 50));
         jLabel4.setText("Цена");
 
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(74, 48, 50));
         jLabel5.setText("Изготовить палочку");
 
-        jButton1.setFont(new java.awt.Font("Verdana", 0, 16)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(145, 44, 160));
+        jButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(243, 229, 200));
         jButton1.setText("Создать");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -6,10 +6,16 @@
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="wands">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="e3" green="dc" red="ca" type="rgb"/>
+            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                 <TitledBorder/>
               </Border>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="32" green="30" red="4a" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="            &#x41f;&#x430;&#x43b;&#x43e;&#x447;&#x43a;&#x438;"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -42,6 +48,9 @@
                 <TitledBorder/>
               </Border>
             </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="32" green="30" red="4a" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="   &#x418;&#x437;&#x433;&#x43e;&#x442;&#x43e;&#x432;&#x438;&#x442;&#x44c; &#x43f;&#x430;&#x43b;&#x43e;&#x447;&#x43a;&#x443;"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="12" style="0"/>
@@ -63,6 +72,9 @@
                 <TitledBorder/>
               </Border>
             </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="32" green="30" red="4a" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="         &#x41f;&#x43e;&#x43a;&#x443;&#x43f;&#x430;&#x442;&#x435;&#x43b;&#x438;"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="12" style="0"/>
@@ -83,6 +95,9 @@
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                 <TitledBorder/>
               </Border>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="32" green="30" red="4a" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="              &#x421;&#x43a;&#x43b;&#x430;&#x434;"/>
             <Property name="autoscrolls" type="boolean" value="true"/>
@@ -106,6 +121,9 @@
                 <TitledBorder/>
               </Border>
             </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="32" green="30" red="4a" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="     &#x416;&#x443;&#x440;&#x43d;&#x430;&#x43b; &#x43f;&#x43e;&#x441;&#x442;&#x430;&#x432;&#x43e;&#x43a;"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Comic Sans MS" size="12" style="0"/>
@@ -126,6 +144,9 @@
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                 <TitledBorder/>
               </Border>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="32" green="30" red="4a" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="      &#x421;&#x431;&#x440;&#x43e;&#x441;&#x438;&#x442;&#x44c; &#x434;&#x430;&#x43d;&#x43d;&#x44b;&#x435;"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">

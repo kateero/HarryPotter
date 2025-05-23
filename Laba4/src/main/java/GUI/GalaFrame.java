@@ -39,7 +39,9 @@ public class GalaFrame extends javax.swing.JFrame {
         jTabbedPane1.addTab("Заказать компоненты", panelDelivery);
         jTabbedPane1.addTab("Журнал поставок", panelDeliveryDetails);
 
+        wands.setBackground(new java.awt.Color(202, 220, 227));
         wands.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        wands.setForeground(new java.awt.Color(74, 48, 50));
         wands.setText("            Палочки");
         wands.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         wands.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
@@ -56,6 +58,7 @@ public class GalaFrame extends javax.swing.JFrame {
         menuBar.add(wands);
 
         createWand.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        createWand.setForeground(new java.awt.Color(74, 48, 50));
         createWand.setText("   Изготовить палочку");
         createWand.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         createWand.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -69,6 +72,7 @@ public class GalaFrame extends javax.swing.JFrame {
         menuBar.add(createWand);
 
         buyers.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        buyers.setForeground(new java.awt.Color(74, 48, 50));
         buyers.setText("         Покупатели");
         buyers.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         buyers.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -82,6 +86,7 @@ public class GalaFrame extends javax.swing.JFrame {
         menuBar.add(buyers);
 
         storageComponents.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        storageComponents.setForeground(new java.awt.Color(74, 48, 50));
         storageComponents.setText("              Склад");
         storageComponents.setAutoscrolls(true);
         storageComponents.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
@@ -96,6 +101,7 @@ public class GalaFrame extends javax.swing.JFrame {
         menuBar.add(storageComponents);
 
         deliveryDetails.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        deliveryDetails.setForeground(new java.awt.Color(74, 48, 50));
         deliveryDetails.setText("     Журнал поставок");
         deliveryDetails.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         deliveryDetails.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -109,6 +115,7 @@ public class GalaFrame extends javax.swing.JFrame {
         menuBar.add(deliveryDetails);
 
         delivery.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        delivery.setForeground(new java.awt.Color(74, 48, 50));
         delivery.setText("      Сбросить данные");
         delivery.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         delivery.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
