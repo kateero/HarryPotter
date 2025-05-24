@@ -15,7 +15,7 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.SwingWorker;
 
 public class panelCreate extends javax.swing.JPanel {
-
+    
     public panelCreate() {
         initComponents();
     }
@@ -33,7 +33,7 @@ public class panelCreate extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        buttonCreate = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(222, 186, 191));
 
@@ -74,13 +74,13 @@ public class panelCreate extends javax.swing.JPanel {
         jLabel5.setForeground(new java.awt.Color(74, 48, 50));
         jLabel5.setText("Изготовить палочку");
 
-        jButton1.setBackground(new java.awt.Color(145, 44, 160));
-        jButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(243, 229, 200));
-        jButton1.setText("Создать");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttonCreate.setBackground(new java.awt.Color(145, 44, 160));
+        buttonCreate.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        buttonCreate.setForeground(new java.awt.Color(243, 229, 200));
+        buttonCreate.setText("Создать");
+        buttonCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                buttonCreateActionPerformed(evt);
             }
         });
 
@@ -117,7 +117,7 @@ public class panelCreate extends javax.swing.JPanel {
                         .addComponent(spinnerPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(362, 362, 362)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(buttonCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -140,21 +140,23 @@ public class panelCreate extends javax.swing.JPanel {
                     .addComponent(jLabel4)
                     .addComponent(spinnerPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(77, 77, 77)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(buttonCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(64, 64, 64))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void buttonCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCreateActionPerformed
         if(comboBoxCore.getSelectedItem() != null && comboBoxWood.getSelectedItem() != null){
             createWand();
+            this.updateComboBox(true);
+            this.updateComboBox(false);
         } else {
              JOptionPane.showMessageDialog(null,
                             "Выберите компоненты",
                             "Предупреждение", JOptionPane.INFORMATION_MESSAGE);
         }
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_buttonCreateActionPerformed
 
     public void updateComboBox(boolean flag) {
         new SwingWorker<List<Component>, Void>() {
@@ -235,9 +237,9 @@ public class panelCreate extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonCreate;
     private javax.swing.JComboBox<String> comboBoxCore;
     private javax.swing.JComboBox<String> comboBoxWood;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
