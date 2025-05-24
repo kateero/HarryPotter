@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence                                  http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
   <persistence-unit name="Lab4PU" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-    <!-- Сущности можно явно перечислить или использовать сканирование -->
+    <!-- Сущности -->
     <class>Entities.Wizard</class>
     <class>Entities.Wand</class>
     <class>Entities.Delivery</class>
@@ -11,15 +11,21 @@
     <properties>
       <!-- JDBC настройки -->
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5433/Lab4?currentSchema=harrypotter"/>
-      <property name="javax.persistence.jdbc.user" value="katya"/>
-      <property name="javax.persistence.jdbc.password" value="12345"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://aws-0-eu-north-1.pooler.supabase.com:5432/postgres?user=postgres.nbzjfqldmnyqejsxnmdc&amp;password=GthcbrCvfxytymrbq&amp;sslmode=require"/>
+      <property name="javax.persistence.jdbc.user" value="postgres.nbzjfqldmnyqejsxnmdc"/>
+      <property name="javax.persistence.jdbc.password" value="GthcbrCvfxytymrbq"/>
+      
       <!-- Hibernate настройки -->
       <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
       <property name="hibernate.hbm2ddl.auto" value="none"/>
-      <!-- или validate/update/create для автообновления схемы -->
       <property name="hibernate.show_sql" value="false"/>
       <property name="hibernate.format_sql" value="false"/>
+      <property name="hibernate.use_sql_comments" value="false"/>
+      
+      <!-- Дополнительные параметры для стабильного подключения -->
+      <property name="hibernate.connection.provider_disables_autocommit" value="true"/>
+      <property name="hibernate.connection.ssl" value="true"/>
+      <property name="hibernate.connection.sslmode" value="require"/>
     </properties>
   </persistence-unit>
 </persistence>
